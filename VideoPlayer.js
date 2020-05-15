@@ -749,7 +749,7 @@ export default class VideoPlayer extends Component {
              * If you seek to the end of the video we fire the
              * onEnd callback
              */
-            onPanResponderRelease: ( evt, gestureState ) => {
+            onPanResponderEnd: ( evt, gestureState ) => {
                 const time = this.calculateTimeFromSeekerPosition();
                 let state = this.state;
                 if ( time >= state.duration && ! state.loading ) {
@@ -801,7 +801,7 @@ export default class VideoPlayer extends Component {
             /**
              * Update the offset...
              */
-            onPanResponderRelease: ( evt, gestureState ) => {
+            onPanResponderEnd: ( evt, gestureState ) => {
                 let state = this.state;
                 state.volumeOffset = state.volumePosition;
                 this.setControlTimeout();
